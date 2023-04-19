@@ -1,6 +1,9 @@
 package com.ll.exam1;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
+import java.util.Optional;
 
 public class Main {
     public static void main(String[] args) {
@@ -48,5 +51,29 @@ class MyArrayList<T>{
         }
         --size;
         return removeValue;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MyArrayList<?> that = (MyArrayList<?>) o;
+        return size == that.size && DEFAULT_SIZE == that.DEFAULT_SIZE && Arrays.equals(arr, that.arr);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(size, DEFAULT_SIZE);
+        result = 31 * result + Arrays.hashCode(arr);
+        return result;
+    }
+
+    boolean contains(T findValue) {
+        Optional<T> findedValue = Arrays.stream(arr).findAny().filter(e -> e.equals(findValue));
+        if (findedValue.isPresent()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

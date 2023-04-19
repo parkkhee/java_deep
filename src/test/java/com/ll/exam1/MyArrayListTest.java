@@ -29,4 +29,27 @@ class MyArrayListTest {
         assertEquals("Element2", list.remove(1));
         assertEquals(2, list.size());
     }
+
+    @Test
+    void testGet() {
+        list.add("Element1");
+        list.add("Element2");
+        assertEquals("Element1", list.get(0));
+        assertEquals("Element2", list.get(1));
+    }
+    @Test
+    void testSize() {
+        list.add("Element1");
+        list.add("Element2");
+        list.add("Element3");
+        assertEquals(3, list.size());
+    }
+
+    @Test
+    void testContains() {
+        list.add("Element1");
+        list.add("Element2");
+        assertTrue(list.contains("Element1"));
+        assertFalse(list.contains("Element3"));
+    }
 }
