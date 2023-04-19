@@ -52,4 +52,33 @@ class MyArrayListTest {
         assertTrue(list.contains("Element1"));
         assertFalse(list.contains("Element3"));
     }
+
+    @Test
+    void testIndexOf() {
+        list.add("Element1");
+        list.add("Element2");
+        list.add("Element1");
+        assertEquals(0, list.indexOf("Element1"));
+        assertEquals(1, list.indexOf("Element2"));
+        assertEquals(-1, list.indexOf("Element3"));
+    }
+
+    @Test
+    void testClear() {
+        list.add("Element1");
+        list.add("Element2");
+        list.add("Element3");
+        list.clear();
+        assertEquals(0, list.size());
+        assertTrue(list.isEmpty());
+    }
+
+    @Test
+    void testClear2() {
+        list.add("Element1");
+        list.add("Element2");
+        list.add("Element3");
+        assertEquals(3, list.size());
+        assertFalse(list.isEmpty());
+    }
 }

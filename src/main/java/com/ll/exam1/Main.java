@@ -53,20 +53,6 @@ class MyArrayList<T>{
         return removeValue;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        MyArrayList<?> that = (MyArrayList<?>) o;
-        return size == that.size && DEFAULT_SIZE == that.DEFAULT_SIZE && Arrays.equals(arr, that.arr);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = Objects.hash(size, DEFAULT_SIZE);
-        result = 31 * result + Arrays.hashCode(arr);
-        return result;
-    }
 
     boolean contains(T findValue) {
         Optional<T> findedValue = Arrays.stream(arr).findAny().filter(e -> e.equals(findValue));
@@ -75,5 +61,23 @@ class MyArrayList<T>{
         } else {
             return false;
         }
+    }
+
+    int indexOf(T findIdx) {
+        for (int i = 0; i < size; i++) {
+            if (arr[i].equals(findIdx)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public void clear() {
+        arr = (T[]) new Object[DEFAULT_SIZE];
+        size=0;
+    }
+
+    public boolean isEmpty() {
+        return size==0;
     }
 }
