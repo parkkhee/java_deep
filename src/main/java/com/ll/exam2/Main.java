@@ -90,15 +90,30 @@ class MyHashMap<K, V>{
     }
 
 
-    int remove(K key) {
+    V remove(K key) {
 
-        Object removeValue = Arrays.stream(arr).filter(e -> e[1].equals(key))
-                .map(e -> e[1]).findFirst().orElse(null);
+        try {
+            Object removeValue = Arrays.stream(arr).filter(e -> e[0].equals(key))
+                    .map(e -> e[1]).findFirst().orElse(null);
 
-        int i = Arrays.binarySearch(arr, key);
+            int idx=0;
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i][0].equals(key)) {
+                    idx = i;
+                    --size;
+                    break;
+                }
 
+            }
 
-        return (int) removeValue;
+            for (int i = idx+1; i < arr.length; i++) {
+                arr[i-1] = arr[i];
+            }
+
+            return (V) removeValue;
+        } catch (NullPointerException ne) {
+            return null;
+        }
 
     }
 }
