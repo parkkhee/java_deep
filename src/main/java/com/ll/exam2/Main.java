@@ -125,4 +125,28 @@ class MyHashMap<K, V>{
         return false;
 
     }
+
+    public boolean containsValue(V value) {
+
+        if (Arrays.stream(arr).findAny().filter(e -> e[1].equals(value)).isPresent()) {
+            return true;
+        }
+        return false;
+
+    }
+
+    public void clear() {
+
+        for (int i = 0; i < size; i++) {
+
+            arr[i] = null;
+
+        }
+        size=0;
+
+    }
+
+    public boolean isEmpty() {
+        return size==0;
+    }
 }
