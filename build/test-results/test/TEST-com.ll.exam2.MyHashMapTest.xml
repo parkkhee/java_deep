@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ll.exam2.MyHashMapTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2023-04-20T06:27:36" hostname="DESKTOP-1PVIJ6M" time="0.041">
+<testsuite name="com.ll.exam2.MyHashMapTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2023-04-20T06:40:45" hostname="DESKTOP-1PVIJ6M" time="0.05">
   <properties/>
-  <testcase name="testGet()" classname="com.ll.exam2.MyHashMapTest" time="0.026"/>
-  <testcase name="testPut()" classname="com.ll.exam2.MyHashMapTest" time="0.002"/>
-  <testcase name="testClear()" classname="com.ll.exam2.MyHashMapTest" time="0.001"/>
-  <testcase name="testSize()" classname="com.ll.exam2.MyHashMapTest" time="0.0"/>
+  <testcase name="testGet()" classname="com.ll.exam2.MyHashMapTest" time="0.032"/>
+  <testcase name="testPut()" classname="com.ll.exam2.MyHashMapTest" time="0.001"/>
+  <testcase name="testClear()" classname="com.ll.exam2.MyHashMapTest" time="0.002"/>
+  <testcase name="testSize()" classname="com.ll.exam2.MyHashMapTest" time="0.001"/>
   <testcase name="testContainsKey()" classname="com.ll.exam2.MyHashMapTest" time="0.002"/>
-  <testcase name="testContainsValue()" classname="com.ll.exam2.MyHashMapTest" time="0.001"/>
-  <testcase name="testPutReplace()" classname="com.ll.exam2.MyHashMapTest" time="0.001"/>
-  <testcase name="testRemove()" classname="com.ll.exam2.MyHashMapTest" time="0.001"/>
+  <testcase name="testContainsValue()" classname="com.ll.exam2.MyHashMapTest" time="0.002"/>
+  <testcase name="testPutReplace()" classname="com.ll.exam2.MyHashMapTest" time="0.0"/>
+  <testcase name="testRemove()" classname="com.ll.exam2.MyHashMapTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

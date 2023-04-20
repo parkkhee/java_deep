@@ -14,12 +14,12 @@ public class Main {
 
 class MyHashMap<K, V>{
 
-    Object[][] arr;
+    Node[] arr;
     private int size;
     private static final int DEFAULT_SIZE=2;
 
     public MyHashMap() {
-        arr = new Object[DEFAULT_SIZE][DEFAULT_SIZE];
+        arr = new Node[DEFAULT_SIZE];
         size=0;
     }
 
@@ -30,7 +30,7 @@ class MyHashMap<K, V>{
             return size;
         }
 
-        arr[size] = new Object[]{key, value};
+        arr[size] = new Node(key, value);
 
         size++;
 
@@ -64,8 +64,8 @@ class MyHashMap<K, V>{
 
         for (int i = 0; i < arr.length; i++) {
             try {
-                if (arr[i][0].equals(key)) {
-                    arr[i][1] = value;
+                if (arr[i].key.equals(key)) {
+                    arr[i].value = value;
                     return true;
                 }
 
@@ -80,8 +80,8 @@ class MyHashMap<K, V>{
     V get(K key) {
 
         Object getValue = Arrays.stream(arr)
-                .filter(e -> e[0].equals(key))
-                .map(e -> e[1])
+                .filter(e -> e.key.equals(key))
+                .map(e -> e.value)
                 .findFirst()
                 .orElse(null);
 
@@ -93,12 +93,12 @@ class MyHashMap<K, V>{
     V remove(K key) {
 
         try {
-            Object removeValue = Arrays.stream(arr).filter(e -> e[0].equals(key))
-                    .map(e -> e[1]).findFirst().orElse(null);
+            Object removeValue = Arrays.stream(arr).filter(e -> e.key.equals(key))
+                    .map(e -> e.value).findFirst().orElse(null);
 
             int idx=0;
             for (int i = 0; i < arr.length; i++) {
-                if (arr[i][0].equals(key)) {
+                if (arr[i].key.equals(key)) {
                     idx = i;
                     --size;
                     break;
@@ -119,7 +119,7 @@ class MyHashMap<K, V>{
 
     public boolean containsKey(K key) {
 
-        if (Arrays.stream(arr).findAny().filter(e -> e[0].equals(key)).isPresent()) {
+        if (Arrays.stream(arr).findAny().filter(e -> e.key.equals(key)).isPresent()) {
             return true;
         }
         return false;
@@ -128,7 +128,7 @@ class MyHashMap<K, V>{
 
     public boolean containsValue(V value) {
 
-        if (Arrays.stream(arr).findAny().filter(e -> e[1].equals(value)).isPresent()) {
+        if (Arrays.stream(arr).findAny().filter(e -> e.value.equals(value)).isPresent()) {
             return true;
         }
         return false;
@@ -148,5 +148,18 @@ class MyHashMap<K, V>{
 
     public boolean isEmpty() {
         return size==0;
+    }
+
+
+    private static class Node<K,V> {
+        private K key;
+        private V value;
+
+        public Node(K key, V value) {
+            this.key = key;
+            this.value = value;
+        }
+
+
     }
 }
