@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ll.exam2.MyHashMapTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-04-20T05:39:56" hostname="DESKTOP-1PVIJ6M" time="0.061">
+<testsuite name="com.ll.exam2.MyHashMapTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-04-20T06:14:18" hostname="DESKTOP-1PVIJ6M" time="0.031">
   <properties/>
-  <testcase name="testSize()" classname="com.ll.exam2.MyHashMapTest" time="0.061"/>
+  <testcase name="testContainsKey()" classname="com.ll.exam2.MyHashMapTest" time="0.031"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

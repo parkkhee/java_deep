@@ -116,4 +116,13 @@ class MyHashMap<K, V>{
         }
 
     }
+
+    public boolean containsKey(K key) {
+
+        if (Arrays.stream(arr).findAny().filter(e -> e[0].equals(key)).isPresent()) {
+            return true;
+        }
+        return false;
+
+    }
 }
