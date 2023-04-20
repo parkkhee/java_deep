@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 class MyHashMapTest {
@@ -25,6 +26,7 @@ class MyHashMapTest {
     void testPutReplace() {
         map.put("Key1", 1);
         assertEquals(Integer.valueOf(1), map.put("Key1", 2));
+        assertThat(map.get("Key1")).isEqualTo(2);
         assertEquals(1, map.size());
     }
 

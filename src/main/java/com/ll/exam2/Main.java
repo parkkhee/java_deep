@@ -62,19 +62,15 @@ class MyHashMap<K, V>{
 
     boolean isPresent(K key, V value){
 
-        for (int i = 0; i < arr.length; i++) {
-            try {
-                if (arr[i].key.equals(key)) {
-                    arr[i].value = value;
-                    return true;
-                }
-
-            } catch (NullPointerException e) {
-                return false;
+        try {
+            if (Arrays.stream(arr).findFirst().filter(e -> e.key.equals(key)).map(e -> e.value = value).isPresent()) {
+                return true;
             }
+        } catch (NullPointerException ne) {
+            return false;
         }
-        return false;
 
+        return false;
     }
 
     V get(K key) {
