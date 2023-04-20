@@ -16,10 +16,13 @@ class MyArrayList<T>{
 
     private T[] arr;
     private int size=0;
-    private int DEFAULT_SIZE=10;
+    private static final int DEFAULT_SIZE=2;
 
     public MyArrayList(){
-        this.arr = (T[])new Object[DEFAULT_SIZE];
+        this(DEFAULT_SIZE);
+    }
+    public MyArrayList(int dataLength){
+        this.arr = (T[])new Object[dataLength];
     }
 
     boolean add(T input) {
